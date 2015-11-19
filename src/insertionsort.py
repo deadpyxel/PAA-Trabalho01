@@ -22,11 +22,11 @@
 #=======================================================================
 
 
-def insertionsort(aList):
-    for i in range(1, len(aList)):
-        tmp = aList[i]
+def insertionsort(alist):
+    for i in range(1, len(alist)):
+        tmp = alist[i]
         k = i
-        while k > 0 and tmp < aList[k - 1]:
-            aList[k] = aList[k - 1]
+        while k > 0 and tmp < alist[k - 1]:
+            alist[k] = alist[k - 1]
             k -= 1
-        aList[k] = tmp
+        alist[k] = tmp

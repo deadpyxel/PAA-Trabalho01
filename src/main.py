@@ -1,3 +1,4 @@
+# main.py
 from general import *
 from bubblesort import *
 from quicksort import *
@@ -7,17 +8,31 @@ from selectionsort import *
 from heapsort import *
 from mergesort import *
 
+# cria o diretorio para armazenagem dos plots, por padrao o diretorio
+# '../plot_results'
 create_dir(ROOT_DIR)
 
-n = 1000  # Quantos elementos no Array
-list = fill_array(n)
+n = 5000  # Quantos elementos no Array
+num_it = 6  # Numero de iteracoes no teste
+# list = fill_array(n)
+
 # bubblesort(list)
 # quicksort(list)
 # insertionsort(list)
 # shellsort(list)
 # selectionsort(list)
-heapsort(list)
+# heapsort(list)
 # mergesort(list)
-# print list
 
-#plot_graph(list, list, 'test2')
+cputime = [0.] * num_it  # inicializa o vetor vazio de dimensao num_it
+dimvet = [0.] * num_it  # inicializa o vetor vazio de dimensao num_it
+
+# Ira realizar num_it iteracoes de um mesmo algoritmo com diferentes dimensoes
+for i in range(num_it):
+    list = fill_array(n * (i + 1))
+    dimvet[i] = len(list)
+    cputime[i] = bubblesort(list)  # Armazena o cputime para aquela execucao
+
+print dimvet, cputime
+
+plot_graph(dimvet, cputime, 'Bubblesort')
