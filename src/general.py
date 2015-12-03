@@ -28,15 +28,6 @@ def write_file(path, data):
     f.close()
 
 
-'''
-def calc_time():
-    command = 'echo test'# + options
-    process = os.popen(command)
-    results = str(process.read())
-    return results
-'''
-
-
 def plot_graph(dim, time, sortname):
     plt.figure()
     plt.plot(dim, time, 'b-')

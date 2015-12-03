@@ -31,8 +31,7 @@ dimvet = [0.] * num_it  # inicializa o vetor vazio de dimensao num_it
 for i in range(num_it):
     list = fill_array(n * (i + 1))
     dimvet[i] = len(list)
-    cputime[i] = bubblesort(list)  # Armazena o cputime para aquela execucao
+    cputime[i] = mergesort(list)  # Armazena o cputime para aquela execucao
 
-print dimvet, cputime
-
-plot_graph(dimvet, cputime, 'Bubblesort')
+# print dimvet, cputime
+plot_graph(dimvet, cputime, 'Mergesort')

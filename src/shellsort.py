@@ -15,5 +15,4 @@ def shellsort(alist):
         inc = inc / 2 if inc / 2 else (0 if inc == 1 else 1)
     end = time.clock()
     cputime = end - start
-    # print cputime, 's'
     return cputime
