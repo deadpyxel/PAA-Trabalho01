@@ -10,13 +10,13 @@ def mergesort(aList):
 
 
 def _mergesort(aList, first, last):
-    # break problem into smaller structurally identical pieces
+    # quebra o problema em partes menores
     mid = (first + last) / 2
     if first < last:
         _mergesort(aList, first, mid)
         _mergesort(aList, mid + 1, last)
 
-    # merge solved pieces to get solution to original problem
+    # junta as partes ordenadas para chegar a solucao do problema orginal
     a, f, l = 0, first, mid + 1
     tmp = [None] * (last - first + 1)
 

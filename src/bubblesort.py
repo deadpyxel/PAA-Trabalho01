@@ -4,7 +4,7 @@ import time
 def bubblesort(alist):
     length = len(alist) - 1
     sorted = False
-    start = time.clock()
+    start = time.clock() # para calcular o tempo de execucao
     while not sorted:
         sorted = True
         for i in range(length):

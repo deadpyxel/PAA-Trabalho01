@@ -3,13 +3,13 @@ import time
 
 def heapsort(alist):
     start = time.clock()
-    # convert alist to heap
+    # converte alist para heap
     length = len(alist) - 1
     leastParent = length / 2
     for i in range(leastParent, -1, -1):
         movedown(alist, i, length)
 
-    # flatten heap into sorted array
+    # converte o heap em um array ordenado
     for i in range(length, 0, -1):
         if alist[0] > alist[i]:
             swap(alist, 0, i)
@@ -22,18 +22,18 @@ def heapsort(alist):
 def movedown(alist, first, last):
     largest = 2 * first + 1
     while largest <= last:
-            # right child exists and is larger than left child
+        # filho direito e maior que o filho esquerdo
         if (largest < last) and (alist[largest] < alist[largest + 1]):
             largest += 1
 
-        # right child is larger than parent
+        # filho direito e maior que o pai
         if alist[largest] > alist[first]:
             swap(alist, largest, first)
-            # move down to largest child
+            # move pra baixo o maior filho
             first = largest
             largest = 2 * first + 1
         else:
-            return  # force exit
+            return  # forca saida
 
 
 def swap(A, x, y):
