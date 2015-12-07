@@ -28,20 +28,20 @@ def save_time(i, list):
 # '../plot_results'
 create_dir(ROOT_DIR)
 
-n = 5000  # Quantos elementos no Array
+n = 5000 # Quantos elementos no Array
 num_it = 6  # Numero de iteracoes no teste
 
 # Inicializa os vetores para armazenamento do tempo de execucao
 cputime1, cputime2, cputime3, cputime4, cputime5, cputime6, cputime7 = (
     ([0.] * num_it) for i in range(7))
-dimvet = [0.] * num_it  # inicializa o vetor vazio de dimensao num_it
+dimvet = ([0.] * num_it)  # inicializa o vetor vazio de dimensao num_it
 
 # Ira realizar num_it iteracoes de um mesmo algoritmo com diferentes dimensoes
 for i in range(num_it):
     list1, list2, list3, list4, list5, list6, list7 = (
-        (fill_array(n * (i + 1))) for i in range(7))
+        (fill_array(n * (i + 1))) for k in range(7))
     list_list = [list1, list2, list3, list4, list5, list5, list6, list7]
-    dimvet[i] = len(list_list[0])
+    dimvet[i] = len(list1)
     save_time(i, list_list)
 
 

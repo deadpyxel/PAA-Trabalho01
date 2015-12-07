@@ -41,6 +41,7 @@ def plot_graph(dim, time_bubble, dim2, time_quick, dim3, time_insert, dim4, time
     plt.xlabel('Tamanho da entrada')
     plt.title('Tempo de CPU para todos algoritmos')
     plt.subplots_adjust(left=0.125, bottom=0.1, right=0.9, top=0.9)
+    # plt.Axes.set_yscale()
     plt.savefig(ROOT_DIR + '/all_algs.png',
                 bbox_inches='tight', pad_inches=.5)
     plt.show()
