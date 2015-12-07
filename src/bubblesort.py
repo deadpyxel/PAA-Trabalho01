@@ -2,6 +2,7 @@ import time
 
 
 def bubblesort(alist):
+    alist = list(alist)
     length = len(alist) - 1
     sorted = False
     start = time.clock() # para calcular o tempo de execucao

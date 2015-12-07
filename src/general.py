@@ -4,6 +4,7 @@ Modulo responsavel por funcoes simples e comuns a todos os algoritmos
 
 import matplotlib.pyplot as plt
 import os
+import math
 from random import random
 
 ROOT_DIR = '../plot_results'
