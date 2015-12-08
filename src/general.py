@@ -1,3 +1,4 @@
+# general.py
 '''
 Modulo responsavel por funcoes simples e comuns a todos os algoritmos
 '''
@@ -7,7 +8,8 @@ import os
 import math
 from random import random
 
-ROOT_DIR = '../plot_results'
+PLOT_DIR = '../plot_results'
+DATA_DIR = '../time_results'
 
 
 def fill_array(n):  # Preenche o array com 'n' elementos aleatorio
@@ -25,7 +27,8 @@ def create_dir(directory):
 
 def write_file(path, data):
     f = open(path, 'w')
-    f.write(data)
+    # f.write(data) # para salvar uma unica string/elemento
+    f.write("\n".join(str(elem) for elem in data))
     f.close()
 
 
@@ -42,6 +45,6 @@ def plot_graph(dim, time_bubble, dim2, time_quick, dim3, time_insert, dim4, time
     plt.title('Tempo de CPU para todos algoritmos')
     plt.subplots_adjust(left=0.125, bottom=0.1, right=0.9, top=0.9)
     # plt.Axes.set_yscale()
-    plt.savefig(ROOT_DIR + '/all_algs.png',
+    plt.savefig(PLOT_DIR + '/all_algs.png',
                 bbox_inches='tight', pad_inches=.5)
     plt.show()
